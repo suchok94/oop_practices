@@ -17,6 +17,10 @@ class Book:
 class Program:
     @staticmethod
     def main():
-        pass
+        book1 = Book('The Martian Chronicles', 'Ray Bradbury', 604)
+
+        book1.info_about_book()
+        pages_open_book = int(input("Введите номер страницы на которой открыть книгу: "))
+        book1.open_book(pages_open_book)
 
 Program.main()
