@@ -7,9 +7,16 @@ class Book:
 
     def open_book(self, pages):
         if self.pages < pages:
-            print('Книга не может быть открыта на этой странице!')
+            print(f'Книга {self.name} не может быть открыта на {pages} странице!')
         else:
-            print(f'Книга открыта на странице номер {pages}!')
+            print(f'Книга {self.name} открыта на странице номер {pages}!')
 
     def info_about_book(self):
-        print(f'Информация о книге:\n Наименование: {self.name}\nАвтор: {self.author}\nКоличество страниц: {self.pages}')
+        print(f'Информация о книге:\nНаименование: {self.name}\nАвтор: {self.author}\nКоличество страниц: {self.pages}')
+
+class Program:
+    @staticmethod
+    def main():
+        pass
+
+Program.main()
