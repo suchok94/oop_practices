@@ -81,3 +81,28 @@ class PassengerPlane:
         def info_about_plane(self):
             print(f'Информация о самолёте: {self.manufacturer} {self.model}.\nВместимость самолёта: {self.capacity}\nТекущая высота:{self.height}\nТекущая скорость:{self.speed}')
 
+class Program:
+    @staticmethod
+    def main():
+        plain1 = PassengerPlane('Boing', '777', 200, 0, 0)
+
+        plain1.info_about_plane()
+        plain1.take_off_plane()
+        plain1.change_height(100)
+        plain1.change_speed(600)
+        plain1.change_height(200)
+        plain1.change_speed(700)
+        plain1.change_height(300)
+        plain1.change_speed(850)
+        plain1.info_about_plane()
+        plain1.change_height(200)
+        plain1.change_speed(700)
+        plain1.change_height(100)
+        plain1.change_speed(600)
+        plain1.landing_plane()
+        plain1.change_height(0)
+        plain1.change_speed(0)
+        plain1.info_about_plane()
+
+Program.main()
+
