@@ -56,3 +56,20 @@ class Program:
         book1.open_book(pages_open_book)
 
 Program.main()
+
+# task № 3
+class PassengerPlane:
+        def __init__(self):
+            pass
+
+        def take_off_plane(self):
+            pass
+
+        def landing_plane(self):
+            pass
+
+        def change_height(self):
+            pass
+
+        def change_speed(self):
+            pass
