@@ -108,14 +108,20 @@
 
 # task № 4
 class MusicAlbum:
-    def __init__(self):
-        pass
+    def __init__(self, perfomer: str, name: str, genre: str, list_track: lst[str]):
+        self.perfomer = perfomer
+        self.name = name
+        self.genre = genre
+        self.tracks = list_track
 
-    def add_track(self):
-        pass
+    def add_track(self, name_track):
+        self.tracks = self.tracks.append(name_track)
 
-    def delete_track(self):
-        pass
+    def delete_track(self, name_track):
+        self.tracks = self.tracks.remove(name_track)
 
-    def play_track(self):
-        pass
+    def play_track(self, name_track):
+        if name_track in self.tracks:
+            print(f'Трек {name_track} воспроизводится...')
+        else:
+            print(f'Трека {name_track} нет в этом альбоме!')
