@@ -15,20 +15,6 @@ class Animal:
         print(f'Его возраст: {self.age}')
         print("")
 
-class Program:
-
-    @staticmethod
-    def main():
-        animal1 = Animal('Kesha', 'Popugai', 14, 'PopkaDurak')
-        animal1.sound_animal()
-        animal1.info_of_animal()
-
-        animal2 = Animal('Snoop', 'Dog', 7, 'WoofWoof')
-        animal2.sound_animal()
-        animal2.info_of_animal()
-
-
-Program.main()
 
 # task № 2
 class Book:
@@ -46,16 +32,6 @@ class Book:
     def info_about_book(self):
         print(f'Информация о книге:\nНаименование: {self.name}\nАвтор: {self.author}\nКоличество страниц: {self.pages}')
 
-class Program:
-    @staticmethod
-    def main():
-        book1 = Book('The Martian Chronicles', 'Ray Bradbury', 604)
-
-        book1.info_about_book()
-        pages_open_book = int(input("Введите номер страницы на которой открыть книгу: "))
-        book1.open_book(pages_open_book)
-
-Program.main()
 
 # task № 3
 class PassengerPlane:
@@ -80,31 +56,6 @@ class PassengerPlane:
 
         def info_about_plane(self):
             print(f'Информация о самолёте: {self.manufacturer} {self.model}.\nВместимость самолёта: {self.capacity}\nТекущая высота:{self.height}\nТекущая скорость:{self.speed}')
-
-class Program:
-    @staticmethod
-    def main():
-        plain1 = PassengerPlane('Boing', '777', 200, 0, 0)
-
-        plain1.info_about_plane()
-        plain1.take_off_plane()
-        plain1.change_height(100)
-        plain1.change_speed(600)
-        plain1.change_height(200)
-        plain1.change_speed(700)
-        plain1.change_height(300)
-        plain1.change_speed(850)
-        plain1.info_about_plane()
-        plain1.change_height(200)
-        plain1.change_speed(700)
-        plain1.change_height(100)
-        plain1.change_speed(600)
-        plain1.landing_plane()
-        plain1.change_height(0)
-        plain1.change_speed(0)
-        plain1.info_about_plane()
-
-Program.main()
 
 # task № 4
 class MusicAlbum:
@@ -138,6 +89,42 @@ class MusicAlbum:
 class Program:
     @staticmethod
     def main():
+        # task 1
+        animal1 = Animal('Kesha', 'Popugai', 14, 'PopkaDurak')
+        animal1.sound_animal()
+        animal1.info_of_animal()
+
+        animal2 = Animal('Snoop', 'Dog', 7, 'WoofWoof')
+        animal2.sound_animal()
+        animal2.info_of_animal()
+
+        # task 2
+        book1 = Book('The Martian Chronicles', 'Ray Bradbury', 604)
+        book1.info_about_book()
+        pages_open_book = int(input("Введите номер страницы на которой открыть книгу: "))
+        book1.open_book(pages_open_book)
+
+        # task 3
+        plain1 = PassengerPlane('Boing', '777', 200, 0, 0)
+        plain1.info_about_plane()
+        plain1.take_off_plane()
+        plain1.change_height(100)
+        plain1.change_speed(600)
+        plain1.change_height(200)
+        plain1.change_speed(700)
+        plain1.change_height(300)
+        plain1.change_speed(850)
+        plain1.info_about_plane()
+        plain1.change_height(200)
+        plain1.change_speed(700)
+        plain1.change_height(100)
+        plain1.change_speed(600)
+        plain1.landing_plane()
+        plain1.change_height(0)
+        plain1.change_speed(0)
+        plain1.info_about_plane()
+
+        # task 4
         Album1 = MusicAlbum('Linkin Park', 'Meteora', 'Alternative',
                             ['Foreword', 'Dont Stay', 'Somewhere I Belong', 'Lying from You', 'Hit the Floor',
                              'Easier to Run', 'Faint', 'Figure.09', 'Breaking the Habit', 'From the Inside',
