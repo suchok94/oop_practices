@@ -14,5 +14,10 @@ class Animal:
         print(f'Имя животного: {self.name}')
         print(f'Вид животного: {self.type}')
         print(f'Его возраст: {self.age}')
-        
+
+class Program:
+
+    @staticmethod
+    def main():
+        pass
 
