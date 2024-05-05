@@ -59,17 +59,25 @@ Program.main()
 
 # task № 3
 class PassengerPlane:
-        def __init__(self):
-            pass
+        def __init__(self, manufacturer: str, model: str, capacity: int, current_height: float, current_speed: float):
+            self.manufacturer = manufacturer
+            self.model = model
+            self.capacity = capacity
+            self.height = current_height
+            self.speed = current_speed
 
         def take_off_plane(self):
-            pass
+            print(f'Самолёт {self.manufacturer}{self.model} взлетел!')
 
         def landing_plane(self):
-            pass
+            print(f'Самолёт {self.manufacturer}{self.model} приземлился!')
 
-        def change_height(self):
-            pass
+        def change_height(self, height):
+            self.height = height
 
-        def change_speed(self):
-            pass
+        def change_speed(self, speed):
+            self.speed = speed
+
+        def info_about_plane(self):
+            print(f'Информация о самолёте: {self.manufacturer} {self.model}.\nВместимость самолёта: {self.capacity}\nТекущая высота:{self.height}\nТекущая скорость:{self.speed}')
+
