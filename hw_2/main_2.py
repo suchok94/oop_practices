@@ -219,7 +219,7 @@ class Vector:
         return scalar
 
     def find_lenght(self):
-        lenght = 0.5 * (self.x ** 2 + self.y ** 2 + self.z ** 2)
+        lenght =  (self.x ** 2 + self.y ** 2 + self.z ** 2) ** 0.5
         return lenght
 
     def __str__(self):
@@ -274,25 +274,39 @@ class Fraction:
 
 #task 7
 class GeometryUtils:
+    PI = 3.14
     @staticmethod
-    def find_square_circle(radius_circle):
-        pass
+    def find_square_circle(radius):
+        square = GeometryUtils.PI * radius ** 2
+        return square
 
     @staticmethod
-    def find_perimeter_circle(radius_circle):
-        pass
+    def find_perimeter_circle(radius):
+        perimeter = 2 * GeometryUtils.PI * radius
+        return perimeter
 
     @staticmethod
     def find_square_rectangle(length, width):
-        pass
+        square = length * width
+        return square
 
     @staticmethod
     def find_perimeter_rectangle(length, width):
-        pass
+        perimeter = 2 * (length + width)
+        return perimeter
 
     @staticmethod
     def find_square_triangle(length_a, length_b, length_c):
-        pass
+        # if check_trianglelength_a, length_b, length_c:
+        polu_perimeter = (length_a + length_b + length_c) / 2
+        square = (polu_perimeter * (polu_perimeter - length_a) * (polu_perimeter - length_b) * (polu_perimeter - length_c)) ** 0.5
+        return square
+        # else:
+        #     return f'Такого треугольника не существует'
+
+    # @staticmethod
+    # def check_triangle():
+
 class Program:
     @staticmethod
     def main():
@@ -356,16 +370,23 @@ class Program:
         # print(f'Длина вектора {vec2} равна: {vec2.find_lenght()}')
 
         #task 6
-        fraction1 = Fraction(1,7)
+        # fraction1 = Fraction(1,7)
+        #
+        # fraction2 = Fraction(2,2)
+        # print(f'Первая дробь: {fraction1}')
+        # print(f'Вторая дробь: {fraction2}')
+        # print(f'Сумма этих дробей равна: {fraction1 + fraction2}')
+        # print(f'Разница этих дробей равна: {fraction1 - fraction2}')
+        # print(f'Разница этих дробей равна: {fraction2 - fraction1}')
+        # print(f'Произведение этих дробей равна: {fraction1 * fraction2}')
 
-        fraction2 = Fraction(2,2)
-        print(f'Первая дробь: {fraction1}')
-        print(f'Вторая дробь: {fraction2}')
-        print(f'Сумма этих дробей равна: {fraction1 + fraction2}')
-        print(f'Разница этих дробей равна: {fraction1 - fraction2}')
-        print(f'Разница этих дробей равна: {fraction2 - fraction1}')
-        print(f'Произведение этих дробей равна: {fraction1 * fraction2}')
-
-
-
+        #task 7
+        radius_circle = int(input("Введите радиус круга: "))
+        print(f'Площадь круга: {GeometryUtils.find_square_circle(radius_circle)}')
+        print(f'Периметр круга: {GeometryUtils.find_perimeter_circle(radius_circle)}')
+        length_rectangle, width_rectangle = int(input("Введите одну сторону прямоугольника: ")), int(input("Введите другую сторону прямоугольника: "))
+        print(f'Площадь прямоугольник: {GeometryUtils.find_square_rectangle(length_rectangle, width_rectangle)}')
+        print(f'Периметр прямоугольника: {GeometryUtils.find_perimeter_rectangle(length_rectangle, width_rectangle)}')
+        side_a, side_b, side_c = int(input("Введите одну сторону треугольника: ")), int(input("Введите вторую сторону треугольника: ")), int(input("Введите третью сторону треугольника: "))
+        print(f'Площадь треугольника: {GeometryUtils.find_square_triangle(side_a, side_b, side_c)}')
 Program.main()
