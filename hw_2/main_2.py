@@ -39,7 +39,7 @@ class Patient:
                f'Текущий диагноз: {self.disease}'
 
 # task 2
-class TouristSpor:
+class TouristSpot:
     def __init__(self, name: str, country: str, type: str, count_tourists: int = 0):
         '''
         Создаёт объект "Туристическая достопремечательность"
@@ -52,13 +52,13 @@ class TouristSpor:
         self.type = type
         self.count_tourist = count_tourists
 
-    def visit_spot(self, name_tourist):
+    def visit_spot(self, name_tourist: Tourist):
         '''
         Выводит сообщение о посещение туриста достопримечательности
         :param name_tourist:
         :return:
         '''
-        print(f'Посетитель {name_tourist} посетил достопримечательность {self.name}')
+        print(f'Посетитель {name_tourist.surname} {name_tourist.name} посетил достопримечательность {self.name}')
         self.count_tourist += 1
 
     def __str__(self):
@@ -86,11 +86,17 @@ class Program:
         :return:
         """
         #task1
-        p1 = Patient('Petrov', 'Ivan', 'Ivanov', 20, 'computernaya zavisimost')
-        data = datetime.date(2024, 5, 11)
-        time = datetime.time(2, 20)
-        p1.make_an_appointment(data, time)
-        print(p1.__str__())
+        # p1 = Patient('Petrov', 'Ivan', 'Ivanov', 20, 'computernaya zavisimost')
+        # data = datetime.date(2024, 5, 11)
+        # time = datetime.time(2, 20)
+        # p1.make_an_appointment(data, time)
+        # print(p1.__str__())
         #task2
+        tourist1 = Tourist('Petrov', 'Petya')
+        tourist2 = Tourist('Ivanov', 'Vanya')
+        spot1 = TouristSpot('Mamaev Kurgan', 'Russia', 'Историческая')
+        spot1.visit_spot(tourist1)
+        spot1.visit_spot(tourist2)
+        print(spot1.__str__())
 
 Program.main()
