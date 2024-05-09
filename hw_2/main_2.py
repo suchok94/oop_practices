@@ -77,7 +77,25 @@ class Tourist:
         self.surname = surname
         self.name = name
 
-
+# task 3
+class ModelWindow:
+    def __init__(self, name: str, coord_up_left: Vector2D, horizon_size: int, vertic_size: int, color: str, visibility_status: bool, frame_status: bool)
+        pass
+    def move_window(self, new_x, new_y):
+        pass
+    def change_size(self, new_horizon_size = self.horizon_size, new_vertic_size = self.vertic_size):
+        pass
+    def change_color(self, new_color: str):
+        pass
+    def change_status(self, new_visibility = self.visibility_status, new_frame = self.frame_status):
+        pass
+    def get_status(self):
+        pass
+    def __str__(self):
+        pass
+class Vector2D:
+    def __init__(self, x: int, y: int):
+        pass
 class Program:
     @staticmethod
     def main():
@@ -91,12 +109,15 @@ class Program:
         # time = datetime.time(2, 20)
         # p1.make_an_appointment(data, time)
         # print(p1.__str__())
+
         #task2
-        tourist1 = Tourist('Petrov', 'Petya')
-        tourist2 = Tourist('Ivanov', 'Vanya')
-        spot1 = TouristSpot('Mamaev Kurgan', 'Russia', 'Историческая')
-        spot1.visit_spot(tourist1)
-        spot1.visit_spot(tourist2)
-        print(spot1.__str__())
+        # tourist1 = Tourist('Petrov', 'Petya')
+        # tourist2 = Tourist('Ivanov', 'Vanya')
+        # spot1 = TouristSpot('Mamaev Kurgan', 'Russia', 'Историческая')
+        # spot1.visit_spot(tourist1)
+        # spot1.visit_spot(tourist2)
+        # print(spot1.__str__())
+
+        #task3
 
 Program.main()
