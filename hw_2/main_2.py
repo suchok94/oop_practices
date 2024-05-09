@@ -79,23 +79,53 @@ class Tourist:
 
 # task 3
 class ModelWindow:
-    def __init__(self, name: str, coord_up_left: Vector2D, horizon_size: int, vertic_size: int, color: str, visibility_status: bool, frame_status: bool)
-        pass
+    horizon_limit = 1960
+    vertic_limit = 1080
+    def __init__(self, name: str, coord_up_left: Vector2D, horizon_size: int, vertic_size: int, color: str, visibility_status: bool, frame_status: bool):
+        self.name = name
+        self.coord = coord_up_left
+        self.horizon_size = horizon_size
+        self.vertic_size = vertic_size
+        self.color = color
+        self.visibility_status = visibility_status
+        self.frame_status = frame_status
+
     def move_window(self, new_x, new_y):
-        pass
-    def change_size(self, new_horizon_size = self.horizon_size, new_vertic_size = self.vertic_size):
-        pass
+        if new_x + self.horizon_size <= ModelWindow.horizon_limit and new_y + self.vertic_size <= ModelWindow.vertic_limit:
+            self.coord.x = new_x
+            self.coord.y = new_y
+        else:
+            print("Невозможно задать такие координаты!")
+
+    def change_size(self, new_horizon_size: int, new_vertic_size: int):
+        if self.coord.x + new_horizon_size <= ModelWindow.horizon_limit and self.coord.y + new_vertic_size <= ModelWindow.vertic_limit:
+            self.horizon_size = new_horizon_size
+            self.vertic_size = new_vertic_size
+        else:
+            print("Невозможно задать такие размеры окна!")
     def change_color(self, new_color: str):
-        pass
-    def change_status(self, new_visibility = self.visibility_status, new_frame = self.frame_status):
+        self.color = new_color
+    def change_status(self, new_visibility: bool, new_frame:bool ):
         pass
     def get_status(self):
         pass
     def __str__(self):
-        pass
+        return f'Информация о окне:\n' \
+               f'Название:{self.name}\n' \
+               f'Координаты верхнего левого угла: {self.coord}\n' \
+               f'Размер по горизонтали: {self.horizon_size}\n' \
+               f'Размер по вертикали: {self.vertic_size}\n' \
+               f'Цвет: {self.color}\n' \
+               f'Состояние видимости: {self.visibility_status}\n' \
+               f'Состояние рамки: {"С рамкой" if self.frame_status else"Без рамки"}'
+
 class Vector2D:
     def __init__(self, x: int, y: int):
-        pass
+        self.x = x
+        self.y = y
+
+    def __str__(self):
+        return f'x= {self.x} y= {self.y} '
 class Program:
     @staticmethod
     def main():
@@ -119,5 +149,9 @@ class Program:
         # print(spot1.__str__())
 
         #task3
-
+        coord1 = Vector2D(0,0)
+        window1 = ModelWindow('nazvanie', coord1, 100, 100, 'blue', True, False)
+        print(window1)
+        window1.change_size(1000, 1000)
+        print(window1)
 Program.main()
