@@ -1,4 +1,6 @@
+from __future__ import annotations
 import datetime
+
 # task 1
 class Patient:
 
@@ -9,14 +11,17 @@ class Patient:
         self.age = age
         self.disease = disease
 
-    def make_an_appointment(self, date: date, time: date):
+    def make_an_appointment(self, date: date, time: time):
         print(f'Пациент {self.surname} {self.name} {self.patronymic} записан на приём {date} в {time}')
 
     def __str__(self):
-        return f'Информация о пациенте:' \
-               f'ФИО: {self.surname, self.name, self.patronymic}' \
-               f'Возраст: {self.age}' \
+        return f'Информация о пациенте:\n' \
+               f'ФИО: {self.surname} {self.name} {self.patronymic}\n' \
+               f'Возраст: {self.age}\n' \
                f'Текущий диагноз: {self.disease}'
-    
 
+
+class Program:
+    @staticmethod
+    def main():
 
