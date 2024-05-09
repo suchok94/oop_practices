@@ -71,7 +71,12 @@ class TouristSpor:
                f'Страна расположения: {self.country}\n' \
                f'Тип достопримечательности: {self.type}\n' \
                f'Количество туристов которые посетили достопримечательность: {self.count_tourist}'
-    
+
+class Tourist:
+    def __init__(self, surname: str, name: str):
+        self.surname = surname
+        self.name = name
+
 
 class Program:
     @staticmethod
