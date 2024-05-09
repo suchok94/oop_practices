@@ -40,7 +40,29 @@ class Patient:
 
 # task 2
 class TouristSpor:
-    pass
+    def __init__(self, name: str, country: str, type: str, count_tourists: int = 0):
+        '''
+        Создаёт объект "Туристическая достопремечательность"
+        :param name:
+        :param country:
+        :param type:
+        '''
+        pass
+
+    def visit_spot(self, name_tourist):
+        '''
+        Выводит сообщение о посещение туриста достопремечательности
+        :param name_tourist:
+        :return:
+        '''
+        pass
+
+    def __str__(self):
+        '''
+        Выводит информацию о туристической достопремечательности
+        :return:
+        '''
+        pass
 
 class Program:
     @staticmethod
