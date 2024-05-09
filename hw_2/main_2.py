@@ -272,6 +272,27 @@ class Fraction:
         else:
             return f'{self.numerator}/{self.denominator}'
 
+#task 7
+class GeometryUtils:
+    @staticmethod
+    def find_square_circle(radius_circle):
+        pass
+
+    @staticmethod
+    def find_perimeter_circle(radius_circle):
+        pass
+
+    @staticmethod
+    def find_square_rectangle(length, width):
+        pass
+
+    @staticmethod
+    def find_perimeter_rectangle(length, width):
+        pass
+
+    @staticmethod
+    def find_square_triangle(length_a, length_b, length_c):
+        pass
 class Program:
     @staticmethod
     def main():
