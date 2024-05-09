@@ -38,6 +38,9 @@ class Patient:
                f'Возраст: {self.age}\n' \
                f'Текущий диагноз: {self.disease}'
 
+# task 2
+class TouristSpor:
+    pass
 
 class Program:
     @staticmethod
@@ -46,10 +49,12 @@ class Program:
         Запускает программу
         :return:
         """
+        #task1
         p1 = Patient('Petrov', 'Ivan', 'Ivanov', 20, 'computernaya zavisimost')
         data = datetime.date(2024, 5, 11)
         time = datetime.time(2, 20)
         p1.make_an_appointment(data, time)
         print(p1.__str__())
+        #task2
 
 Program.main()
