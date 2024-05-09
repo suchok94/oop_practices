@@ -58,7 +58,8 @@ class TouristSpor:
         :param name_tourist:
         :return:
         '''
-        pass
+        print(f'Посетитель {name_tourist} посетил достопремечательность {self.name}')
+        self.count_tourist += 1
 
     def __str__(self):
         '''
