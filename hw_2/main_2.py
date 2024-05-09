@@ -178,21 +178,51 @@ class ArrayUtils:
 # task 5
 class Vector:
     def __init__(self, x: float, y: float, z: float):
-        pass
+        self.x = x
+        self.y = y
+        self.z = z
 
-    @staticmethod
+
     def __add__(self, other):
-        pass
+        new_x = self.x + other.x
+        new_y = self.y + other.y
+        new_z = self.z + other.z
+        return Vector(new_x, new_y, new_z)
 
-    @staticmethod
+
     def __sub__(self, other):
-        pass
+        new_x = self.x - other.x
+        new_y = self.y - other.y
+        new_z = self.z - other.z
+        return Vector(new_x, new_y, new_z)
+
+
+    def __mul__(self, other):
+        # if type(self) == float and type(other) == Vector:
+        #     boof = self
+        #     self = other
+        #     other = boof
+        if type(other) == int or type(other) == float:
+            new_x = self.x * other
+            new_y = self.y * other
+            new_z = self.z * other
+        elif type(self) == Vector and type(other) == Vector:
+            new_x = self.y * other.z - self.z * other.y
+            new_y = self.z * other.x - self.x * other.z
+            new_z = self.x * other.y - self.y * other.x
+        return Vector(new_x, new_y, new_z)
+
 
     @staticmethod
-    def __mul__(self, other):
-        pass
+    def scalar_product(vec1, vec2):
+        scalar = vec1.x * vec2.x + vec1.y * vec2.y + vec1.z * vec2.z
+        return scalar
 
-    
+    def __str__(self):
+        return f'{self.x, self.y, self.z}'
+
+
+
 
 class Program:
     @staticmethod
@@ -240,4 +270,18 @@ class Program:
         # print(f'Минимальный элемент массива: {ArrayUtils.find_min(lst)}')
 
         #task5
+
+        vec1 = Vector(1, 1, 1)
+        vec2 = Vector(1, -1, 5)
+        print(f'Первый вектор: {vec1}')
+        print(f'Второй вектор: {vec2}')
+        print(f'Сложение векторов: {vec1 + vec2}') # сложение векторов
+        print(f'Разница векторов: {vec1 - vec2}') # вычитание из первого вектора второго
+        print(f'Разница векторов: {vec2 - vec1}')  # вычитание из второго вектора первого
+        print(f'Скалярное произведение на скаляр: {vec1 * 123}') # скалярное произведение на int число
+        print(f'Скалярное произведение на скаляр: {vec2 * 3.14}')  # скалярное произведение на float число
+        # print(3.14 * vec2) # не работает, как я понял нужно править __mul__ в классе float?
+        print(f'Векторное произведение векторов: {vec1 * vec2}')  # вектороное произведение
+        print(f'Векторное произведение векторов: {vec2 * vec1}')  # вектороное произведение
+        print(f'Скалярное произведение двух векторов равно: {Vector.scalar_product(vec1, vec2)}')
 Program.main()
