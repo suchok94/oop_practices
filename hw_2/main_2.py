@@ -228,19 +228,49 @@ class Vector:
 # task 6
 class Fraction:
     def __init__(self, numerator: int, denominator: int):
-        pass
+        self.numerator = numerator
+        self.denominator = denominator
 
     def __add__(self, other):
-        pass
+        if Fraction.check_denominator(self, other):
+            if self.denominator != other.denominator:
+                boof = self.denominator
+                self = self * other.denominator
+                other = other * boof
+
+            new_numerator = self.numerator + other.numerator
+            return Fraction(new_numerator, self.denominator)
 
     def __sub__(self, other):
-        pass
+        if Fraction.check_denominator(self, other):
+            if self.denominator != other.denominator:
+                boof = self.denominator
+                self = self * other.denominator
+                other = other * boof
+            new_numerator = self.numerator - other.numerator
+            return Fraction(new_numerator, self.denominator)
 
     def __mul__(self, other):
-        pass
+        if Fraction.check_denominator(self, other):
+            if type(self) == Fraction and type(other) == int:
+                new_numerator = self.numerator * other
+                new_denominator = self.denominator * other
+            else:
+                new_numerator = self.numerator * other.numerator
+                new_denominator = self.denominator * other.denominator
+            return Fraction(new_numerator, new_denominator)
+
+    def check_denominator(self, other):
+        if self.denominator == 0 or other.denominator == 0:
+            print('В одном из знаменателе дробей "нуль"')
+            return False
+        return True
 
     def __str__(self):
-        pass
+        if self.numerator == self.denominator or self.denominator == 1:
+            return f'{self.numerator/self.denominator}'
+        else:
+            return f'{self.numerator}/{self.denominator}'
 
 class Program:
     @staticmethod
@@ -303,6 +333,18 @@ class Program:
         # print(f'Скалярное произведение двух векторов равно: {Vector.scalar_product(vec1, vec2)}')
         # print(f'Длина вектора {vec1} равна: {vec1.find_lenght()}')
         # print(f'Длина вектора {vec2} равна: {vec2.find_lenght()}')
+
+        #task 6
+        fraction1 = Fraction(1,7)
+
+        fraction2 = Fraction(2,2)
+        print(f'Первая дробь: {fraction1}')
+        print(f'Вторая дробь: {fraction2}')
+        print(f'Сумма этих дробей равна: {fraction1 + fraction2}')
+        print(f'Разница этих дробей равна: {fraction1 - fraction2}')
+        print(f'Разница этих дробей равна: {fraction2 - fraction1}')
+        print(f'Произведение этих дробей равна: {fraction1 * fraction2}')
+
 
 
 Program.main()
