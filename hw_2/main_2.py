@@ -47,7 +47,10 @@ class TouristSpor:
         :param country:
         :param type:
         '''
-        pass
+        self.name = name
+        self.country = country
+        self.type = type
+        self.count_tourist = count_tourists
 
     def visit_spot(self, name_tourist):
         '''
