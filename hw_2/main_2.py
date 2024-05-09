@@ -218,6 +218,10 @@ class Vector:
         scalar = vec1.x * vec2.x + vec1.y * vec2.y + vec1.z * vec2.z
         return scalar
 
+    def find_lenght(self):
+        lenght = 0.5 * (self.x ** 2 + self.y ** 2 + self.z ** 2)
+        return lenght
+
     def __str__(self):
         return f'{self.x, self.y, self.z}'
 
@@ -284,4 +288,6 @@ class Program:
         print(f'Векторное произведение векторов: {vec1 * vec2}')  # вектороное произведение
         print(f'Векторное произведение векторов: {vec2 * vec1}')  # вектороное произведение
         print(f'Скалярное произведение двух векторов равно: {Vector.scalar_product(vec1, vec2)}')
+        print(f'Длина вектора {vec1} равна: {vec1.find_lenght()}')
+        print(f'Длина вектора {vec2} равна: {vec2.find_lenght()}')
 Program.main()
