@@ -177,7 +177,22 @@ class ArrayUtils:
 
 # task 5
 class Vector:
-    pass
+    def __init__(self, x: float, y: float, z: float):
+        pass
+
+    @staticmethod
+    def __add__(self, other):
+        pass
+
+    @staticmethod
+    def __sub__(self, other):
+        pass
+
+    @staticmethod
+    def __mul__(self, other):
+        pass
+
+    
 
 class Program:
     @staticmethod
