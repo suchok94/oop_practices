@@ -106,9 +106,12 @@ class ModelWindow:
     def change_color(self, new_color: str):
         self.color = new_color
     def change_status(self, new_visibility: bool, new_frame:bool ):
-        pass
+        self.visibility_status = new_visibility
+        self.frame_status = new_frame
     def get_status(self):
-        pass
+        print(f'Состояние окна:\n'
+              f'Видимость: {self.visibility_status}\n'
+              f'Рамка: {self.frame_status}')
     def __str__(self):
         return f'Информация о окне:\n' \
                f'Название:{self.name}\n' \
@@ -116,7 +119,7 @@ class ModelWindow:
                f'Размер по горизонтали: {self.horizon_size}\n' \
                f'Размер по вертикали: {self.vertic_size}\n' \
                f'Цвет: {self.color}\n' \
-               f'Состояние видимости: {self.visibility_status}\n' \
+               f'Состояние видимости: {"Видимое" if self.visibility_status else "Невидимое"}\n' \
                f'Состояние рамки: {"С рамкой" if self.frame_status else"Без рамки"}'
 
 class Vector2D:
@@ -149,9 +152,17 @@ class Program:
         # print(spot1.__str__())
 
         #task3
-        coord1 = Vector2D(0,0)
-        window1 = ModelWindow('nazvanie', coord1, 100, 100, 'blue', True, False)
-        print(window1)
-        window1.change_size(1000, 1000)
-        print(window1)
+        coord1 = Vector2D(0,0) # создание объекта Вектор, который содержит точки левого верхнего угла окна
+        window1 = ModelWindow('nazvanie', coord1, 100, 100, 'blue', True, False) # создание объекта окно
+        print(window1) # первоначальная информация об объекте
+        new_x, new_y = int(input("Введите новые координаты левого верхнего угла окна (x): ")), int(input("(y): "))
+        window1.move_window(new_x, new_y)
+        new_horizon, new_vertical = int(input("Введите новые размеры по горизонтали: ")), int(input("по вертикали: "))
+        window1.change_size(new_horizon, new_vertical)
+        new_color = input('Введите новый цвет: ')
+        window1.change_color(new_color)
+        new_visibility = input('Введите статус видимости окна (видимое\невидимое): ')
+        new_frame = input('Введите статус рамки окна (с рамкой\без рамки): ')
+        window1.change_status(True if new_visibility == 'видимое' else False, True if new_frame == 'с рамкой' else False)
+        print(window1) # изменённая информация об объекте
 Program.main()
