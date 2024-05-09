@@ -132,8 +132,48 @@ class Vector2D:
 
 # task 4
 class ArrayUtils:
-    pass
+    @staticmethod
+    def sum_elements(array: list[list]):
+        sum = 0
+        for i in range(0, len(array), 1):
+            for j in range(0, len(array[i]), 1):
+                sum += array[i][j]
+        return sum
 
+    @staticmethod
+    def multi_elements(array: list[list]):
+        multiply = 1
+        for i in range(0, len(array), 1):
+            for j in range(0, len(array[i]), 1):
+                multiply *= array[i][j]
+        return multiply
+
+    @staticmethod
+    def invert_array(array: list[list]):
+        for i in range(0, len(array) // 2, 1):
+            for j in range(0, len(array[i]), 1):
+                boof = array[i][j]
+                array[i][j] = array[-i - 1][-j - 1]
+                array[-i-1][-1-j] = boof
+        return array
+
+    @staticmethod
+    def find_max(array: list[list]):
+        max = array[0][0]
+        for i in range(0, len(array), 1):
+            for j in range(0, len(array[i]), 1):
+                if max < array[i][j]:
+                    max = array[i][j]
+        return max
+
+    @staticmethod
+    def find_min(array: list[list]):
+        min = array[0][0]
+        for i in range(0, len(array), 1):
+            for j in range(0, len(array[i]), 1):
+                if min > array[i][j]:
+                    min = array[i][j]
+        return min
 class Program:
     @staticmethod
     def main():
@@ -170,4 +210,12 @@ class Program:
         # new_frame = input('Введите статус рамки окна (с рамкой\без рамки): ')
         # window1.change_status(True if new_visibility == 'видимое' else False, True if new_frame == 'с рамкой' else False)
         # print(window1) # изменённая информация об объекте
+
+        #task4
+        lst = [[1,2,3],[4,5,6],[7,8,9]]
+        print(f'Сумма элементов массива: {ArrayUtils.sum_elements(lst)}')
+        print(f'Произведение элементов массива: {ArrayUtils.multi_elements(lst)}')
+        print(f'Инвертированный массив: {ArrayUtils.invert_array(lst)}')
+        print(f'Максимальный элемент массива: {ArrayUtils.find_max(lst)}')
+        print(f'Минимальный элемент массива: {ArrayUtils.find_min(lst)}')
 Program.main()
