@@ -174,6 +174,11 @@ class ArrayUtils:
                 if min > array[i][j]:
                     min = array[i][j]
         return min
+
+# task 5
+class Vector:
+    pass
+
 class Program:
     @staticmethod
     def main():
@@ -212,10 +217,12 @@ class Program:
         # print(window1) # изменённая информация об объекте
 
         #task4
-        lst = [[1,2,3],[4,5,6],[7,8,9]]
-        print(f'Сумма элементов массива: {ArrayUtils.sum_elements(lst)}')
-        print(f'Произведение элементов массива: {ArrayUtils.multi_elements(lst)}')
-        print(f'Инвертированный массив: {ArrayUtils.invert_array(lst)}')
-        print(f'Максимальный элемент массива: {ArrayUtils.find_max(lst)}')
-        print(f'Минимальный элемент массива: {ArrayUtils.find_min(lst)}')
+        # lst = [[1,2,3],[4,5,6],[7,8,9]]
+        # print(f'Сумма элементов массива: {ArrayUtils.sum_elements(lst)}')
+        # print(f'Произведение элементов массива: {ArrayUtils.multi_elements(lst)}')
+        # print(f'Инвертированный массив: {ArrayUtils.invert_array(lst)}')
+        # print(f'Максимальный элемент массива: {ArrayUtils.find_max(lst)}')
+        # print(f'Минимальный элемент массива: {ArrayUtils.find_min(lst)}')
+
+        #task5
 Program.main()
