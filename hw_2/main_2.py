@@ -310,6 +310,29 @@ class GeometryUtils:
             return True
 
 
+# task 8
+class Time:
+    def __init__(self, hour, minunte, second):
+        pass
+
+    def __add__(self, other):
+        pass
+
+    def __sub__(self, other):
+        pass
+
+    def __mul__(self, other):
+        pass
+
+    def Correct_time(self):
+        pass
+
+    def __str__(self):
+        pass
+
+    
+
+
 class Program:
     @staticmethod
     def main():
