@@ -312,11 +312,21 @@ class GeometryUtils:
 
 # task 8
 class Time:
-    def __init__(self, hour, minunte, second):
-        pass
+    def __init__(self, hour, minute, second):
+        self.hour = hour
+        self.minute = minute
+        self.second = second
+        Time.correct_time(self)
+
+
+
 
     def __add__(self, other):
-        pass
+        new_hour = self.hour + other.hour
+        new_minute = self.minute + other.minute
+        new_second = self.second + other.second
+        sum_time = Time(new_hour, new_minute, new_second)
+        return Time.correct_time(sum_time)
 
     def __sub__(self, other):
         pass
@@ -324,13 +334,20 @@ class Time:
     def __mul__(self, other):
         pass
 
-    def Correct_time(self):
-        pass
+    def correct_time(self):
+        if self.second >= 60:
+            self.minute = self.minute + self.second // 60
+            self.second = self.second % 60
+        if self.minute >= 60:
+            self.hour = self.hour + self.minute // 60
+            self.minute = self.minute % 60
+        return self
 
     def __str__(self):
-        pass
 
-    
+        return f'{self.hour}:{self.minute}:{self.second}'
+
+
 
 
 class Program:
@@ -407,12 +424,21 @@ class Program:
         # print(f'Произведение этих дробей равна: {fraction1 * fraction2}')
 
         #task 7
-        radius_circle = int(input("Введите радиус круга: "))
-        print(f'Площадь круга: {GeometryUtils.find_square_circle(radius_circle)}')
-        print(f'Периметр круга: {GeometryUtils.find_perimeter_circle(radius_circle)}')
-        length_rectangle, width_rectangle = int(input("Введите одну сторону прямоугольника: ")), int(input("Введите другую сторону прямоугольника: "))
-        print(f'Площадь прямоугольник: {GeometryUtils.find_square_rectangle(length_rectangle, width_rectangle)}')
-        print(f'Периметр прямоугольника: {GeometryUtils.find_perimeter_rectangle(length_rectangle, width_rectangle)}')
-        side_a, side_b, side_c = int(input("Введите одну сторону треугольника: ")), int(input("Введите вторую сторону треугольника: ")), int(input("Введите третью сторону треугольника: "))
-        print(f'Площадь треугольника: {GeometryUtils.find_square_triangle(side_a, side_b, side_c)}')
+        # radius_circle = int(input("Введите радиус круга: "))
+        # print(f'Площадь круга: {GeometryUtils.find_square_circle(radius_circle)}')
+        # print(f'Периметр круга: {GeometryUtils.find_perimeter_circle(radius_circle)}')
+        # length_rectangle, width_rectangle = int(input("Введите одну сторону прямоугольника: ")), int(input("Введите другую сторону прямоугольника: "))
+        # print(f'Площадь прямоугольник: {GeometryUtils.find_square_rectangle(length_rectangle, width_rectangle)}')
+        # print(f'Периметр прямоугольника: {GeometryUtils.find_perimeter_rectangle(length_rectangle, width_rectangle)}')
+        # side_a, side_b, side_c = int(input("Введите одну сторону треугольника: ")), int(input("Введите вторую сторону треугольника: ")), int(input("Введите третью сторону треугольника: "))
+        # print(f'Площадь треугольника: {GeometryUtils.find_square_triangle(side_a, side_b, side_c)}')
+
+        #task 8
+        time1 = Time(1, 68, 100)
+        time2 = Time(1, 121, 100)
+        print(time1)
+        print(time2)
+        time3 = time2 + time1
+        print(time3)
+        print(time2 + time1)
 Program.main()
