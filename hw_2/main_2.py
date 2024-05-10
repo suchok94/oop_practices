@@ -297,15 +297,18 @@ class GeometryUtils:
 
     @staticmethod
     def find_square_triangle(length_a, length_b, length_c):
-        # if check_trianglelength_a, length_b, length_c:
-        polu_perimeter = (length_a + length_b + length_c) / 2
-        square = (polu_perimeter * (polu_perimeter - length_a) * (polu_perimeter - length_b) * (polu_perimeter - length_c)) ** 0.5
-        return square
-        # else:
-        #     return f'Такого треугольника не существует'
+        if GeometryUtils.check_triangle(length_a, length_b, length_c):
+            polu_perimeter = (length_a + length_b + length_c) / 2
+            square = (polu_perimeter * (polu_perimeter - length_a) * (polu_perimeter - length_b) * (polu_perimeter - length_c)) ** 0.5
+            return square
+        else:
+            return f'Такого треугольника не существует'
 
-    # @staticmethod
-    # def check_triangle():
+    @staticmethod
+    def check_triangle(length_a, length_b, length_c):
+        if length_a + length_b > length_c and length_a + length_c > length_b and length_b + length_c > length_a:
+            return True
+
 
 class Program:
     @staticmethod
