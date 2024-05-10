@@ -331,7 +331,6 @@ class Time:
     def __sub__(self, other):
         sub_time = (self.hour * 3600 + self.minute * 60 + self.second) - (other.hour * 3600 + other.minute * 60 + other.second)
         time = Time(0, 0, sub_time)
-        # sub_time = Time(new_hour, new_minute, new_second)
         return Time.correct_time(time)
 
     def __mul__(self, other: int):
@@ -353,7 +352,7 @@ class Time:
 
     def __str__(self):
 
-        return f'{self.hour}:{self.minute}:{self.second}'
+        return f'{self.hour:02}:{self.minute:02}:{self.second:02}'
 
 
 
@@ -444,17 +443,17 @@ class Program:
         #task 8
         time1 = Time(1, 68, 100)
         time2 = Time(1, 121, 100)
-        print(time1)
-        print(time2)
+        print(f'Первое время: {time1}')
+        print(f'Второе время: {time2}')
         time3 = time2 + time1
         time4 = time2 - time1
         time5 = time1 - time2
-        print(time3)
-        print(time4)
-        print(time5)
+        print(f'Сложение времени: {time3}')
+        print(f'Разница второго и первого времени: {time4}')
+        print(f'Разница первого и второго времени: {time5}')
         time6 = time1 * 5
         time7 = time2 * 3
-        print(time6)
-        print(time7)
+        print(f'Первое время умноженное на 5: {time6}')
+        print(f'Второе время умноженное на 3: {time7}')
 
 Program.main()
