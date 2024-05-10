@@ -329,16 +329,24 @@ class Time:
         return Time.correct_time(sum_time)
 
     def __sub__(self, other):
-        pass
+        sub_time = (self.hour * 3600 + self.minute * 60 + self.second) - (other.hour * 3600 + other.minute * 60 + other.second)
+        time = Time(0, 0, sub_time)
+        # sub_time = Time(new_hour, new_minute, new_second)
+        return Time.correct_time(time)
 
-    def __mul__(self, other):
-        pass
+    def __mul__(self, other: int):
+        new_hour = self.hour * other
+        new_minute = self.minute * other
+        new_second = self.second * other
+        time = Time(new_hour, new_minute, new_second)
+        return Time.correct_time(time)
+
 
     def correct_time(self):
-        if self.second >= 60:
+        if abs(self.second) >= 60:
             self.minute = self.minute + self.second // 60
             self.second = self.second % 60
-        if self.minute >= 60:
+        if abs(self.minute) >= 60:
             self.hour = self.hour + self.minute // 60
             self.minute = self.minute % 60
         return self
@@ -439,6 +447,14 @@ class Program:
         print(time1)
         print(time2)
         time3 = time2 + time1
+        time4 = time2 - time1
+        time5 = time1 - time2
         print(time3)
-        print(time2 + time1)
+        print(time4)
+        print(time5)
+        time6 = time1 * 5
+        time7 = time2 * 3
+        print(time6)
+        print(time7)
+
 Program.main()
