@@ -105,13 +105,14 @@ class ModelWindow:
             print("Невозможно задать такие размеры окна!")
     def change_color(self, new_color: str):
         self.color = new_color
-    def change_status(self, new_visibility: bool, new_frame:bool ):
+    def change_visibility_status(self, new_visibility: bool):
         self.visibility_status = new_visibility
+    def change_frame_status(self, new_frame: bool):
         self.frame_status = new_frame
+        
     def get_status(self):
-        print(f'Состояние окна:\n'
-              f'Видимость: {self.visibility_status}\n'
-              f'Рамка: {self.frame_status}')
+        return self.visibility_status, self.frame_status
+        
     def __str__(self):
         return f'Информация о окне:\n' \
                f'Название:{self.name}\n' \
@@ -391,7 +392,8 @@ class Program:
         # window1.change_color(new_color)
         # new_visibility = input('Введите статус видимости окна (видимое\невидимое): ')
         # new_frame = input('Введите статус рамки окна (с рамкой\без рамки): ')
-        # window1.change_status(True if new_visibility == 'видимое' else False, True if new_frame == 'с рамкой' else False)
+        # window1.change_visivility_status(True if new_visibility == 'видимое' else False)
+        # window1.change_frame_status(True if new_frame == 'с рамкой' else False)
         # print(window1) # изменённая информация об объекте
 
         #task4
