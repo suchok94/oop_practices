@@ -1,5 +1,7 @@
 from __future__ import annotations
+# task 1
 class Wizard:
+
 
     def __init__(self, name: str, house: str, magic_level: int, list_spells: list[Spell], graduate: bool):
         self.__name = name
@@ -70,7 +72,15 @@ class Wizard:
                f'Список известных заклинаний: {self.__list_spells}' \
                f'Статус выпуска: {self.__graduate}'
 
+class Spell:
 
+    def __init__(self, name: str, difficulty: int, type: str, description: str):
+        self.__name = name
+        self.__difficulty = difficulty
+        self.__type = type
+        self.__description = description
+
+    
 
 
 
