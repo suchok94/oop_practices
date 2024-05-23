@@ -216,12 +216,17 @@ from __future__ import annotations
 # task 3
 class Robot:
 
-    def __init__(self):
+    def __init__(self, serial_number: str, model: str, current_task: str, batter_charge_level: int, status_work: bool):
+
         pass
+
+
+
 class Program:
 
     @staticmethod
     def main():
+        # # task 1
         # wiz1 = Wizard('Vasya', 'Griff', 3, True)
         # spell1 = Spell('Abrakadabra', 1, 'Creating', 'Create new life')
         # spell2 = Spell('SimSalabim', 1, 'Destroy', 'Destroing object')
@@ -232,14 +237,14 @@ class Program:
         # wiz1.remove_spell(spell1)
         # print(wiz1)
 
-        # task 2
-        emp1 = Employee("Ivan", "Jun", "IT", 123, 1)
-        project1 = Project('Yandex')
-        project2 = Project('Google')
-
-        emp1.add_completed_project(project1)
-        emp1.add_completed_project(project2)
-
-        print(emp1)
+        # # task 2
+        # emp1 = Employee("Ivan", "Jun", "IT", 123, 1)
+        # project1 = Project('Yandex')
+        # project2 = Project('Google')
+        #
+        # emp1.add_completed_project(project1)
+        # emp1.add_completed_project(project2)
+        #
+        # print(emp1)
 
 Program.main()
