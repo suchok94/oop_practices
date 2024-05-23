@@ -122,97 +122,102 @@ from __future__ import annotations
 #                f'Тип: {self.__type}\n' \
 #                f'Описание: {self.__description}\n'
 
-# task 2
-class Employee:
+# # task 2
+# class Employee:
+#
+#     def __init__(self, name: str, position: str, department: str, salary: float, length_of_service: int,
+#                  list_completed_projects: list[Project] = None) -> object:
+#         self.__name = name
+#         self.__position = position
+#         self.__department = department
+#         self.__salary = salary
+#         self.__length_of_service = length_of_service
+#
+#         if not(list_completed_projects is None):
+#             self.__list_completed_projects = list_completed_projects
+#         else:
+#             self.__list_completed_projects = []
+#
+#     def add_completed_project(self, project):
+#         if not (project in self.__list_completed_projects):
+#             self.__list_completed_projects.append(project)
+#
+#     def remove_completed_project(self, project):
+#         if project in self.__list_completed_projects:
+#             self.__list_completed_projects.remove(project)
+#
+#     def increase_salary(self, addition):
+#         if addition > 0:
+#             self.__salary += addition
+#         else:
+#             raise Exception('Error value')
+#
+#     def get_name(self):
+#         return self.__name
+#
+#     def get_position(self):
+#         return self.__position
+#
+#     def get_department(self):
+#        return self.__department
+#
+#     def get_salary(self):
+#         return self.__salary
+#
+#     def get_length_of_service(self):
+#         return self.__length_of_service
+#
+#     def get_list_completed_projects(self):
+#         return self.__list_completed_projects
+#
+#     def set_name(self, name: str):
+#         self.__name = name
+#
+#     def set_position(self, position: str):
+#         self.__position = position
+#
+#     def set_department(self, department: str):
+#         self.__department = department
+#
+#     def set_salary(self, salary: float):
+#         if not isinstance(salary, float):
+#             raise Exception("Error type")
+#
+#         if salary > 0:
+#             self.__salary = salary
+#         else:
+#             raise Exception("Error value")
+#
+#     def set_length_of_service(self, length_of_service: int):
+#         if not(isinstance(length_of_service, int)):
+#             raise Exception("Error type")
+#
+#         if length_of_service >= 0:
+#             self.__length_of_service = length_of_service
+#         else:
+#             raise Exception("Error value")
+#
+#     def __str__(self):
+#         return f'Имя сотрудника: {self.__name}\n' \
+#                f'Должность: {self.__position}\n' \
+#                f'Отдел: {self.__department}\n' \
+#                f'Зарплата: {self.__salary}\n' \
+#                f'Стаж работы: {self.__length_of_service}\n' \
+#                f'Список выполненных проектов: {", ".join(str(name.get_name()) for name in self.__list_completed_projects)}\n'
+#
+# class Project:
+#
+#     def __init__(self, name):
+#         self.__name = name
+#
+#     def get_name(self):
+#         return self.__name
 
-    def __init__(self, name: str, position: str, department: str, salary: float, length_of_service: int,
-                 list_completed_projects: list[Project] = None) -> object:
-        self.__name = name
-        self.__position = position
-        self.__department = department
-        self.__salary = salary
-        self.__length_of_service = length_of_service
+# task 3
+class Robot:
 
-        if not(list_completed_projects is None):
-            self.__list_completed_projects = list_completed_projects
-        else:
-            self.__list_completed_projects = []
-
-    def add_completed_project(self, project):
-        if not (project in self.__list_completed_projects):
-            self.__list_completed_projects.append(project)
-
-    def remove_completed_project(self, project):
-        if project in self.__list_completed_projects:
-            self.__list_completed_projects.remove(project)
-
-    def increase_salary(self, addition):
-        if addition > 0:
-            self.__salary += addition
-        else:
-            raise Exception('Error value')
-
-    def get_name(self):
-        return self.__name
-
-    def get_position(self):
-        return self.__position
-
-    def get_department(self):
-       return self.__department
-
-    def get_salary(self):
-        return self.__salary
-
-    def get_length_of_service(self):
-        return self.__length_of_service
-
-    def get_list_completed_projects(self):
-        return self.__list_completed_projects
-
-    def set_name(self, name: str):
-        self.__name = name
-
-    def set_position(self, position: str):
-        self.__position = position
-
-    def set_department(self, department: str):
-        self.__department = department
-
-    def set_salary(self, salary: float):
-        if not isinstance(salary, float):
-            raise Exception("Error type")
-
-        if salary > 0:
-            self.__salary = salary
-        else:
-            raise Exception("Error value")
-
-    def set_length_of_service(self, length_of_service: int):
-        if not(isinstance(length_of_service, int)):
-            raise Exception("Error type")
-
-        if length_of_service >= 0:
-            self.__length_of_service = length_of_service
-        else:
-            raise Exception("Error value")
-
-    def __str__(self):
-        return f'Имя сотрудника: {self.__name}\n' \
-               f'Должность: {self.__position}\n' \
-               f'Отдел: {self.__department}\n' \
-               f'Зарплата: {self.__salary}\n' \
-               f'Стаж работы: {self.__length_of_service}\n' \
-               f'Список выполненных проектов: {", ".join(str(name.get_name()) for name in self.__list_completed_projects)}\n'
-
-class Project:
-
-    def __init__(self, name):
-        self.__name = name
-
-    def get_name(self):
-        return self.__name
-
+    def __init__(self):
+        pass
 class Program:
 
     @staticmethod
