@@ -125,9 +125,19 @@ from __future__ import annotations
 # task 2
 class Employee:
 
-    def __init__(self):
-        pass
+    def __init__(self, name: str, position: str, department: str, salary: float, length_of_service: int, list_completed_projects: list[Project] = None):
+        self.__name = name
+        self.__position = position
+        self.__department = department
+        self.__salary = salary
+        self.__length_of_service = length_of_service
 
+        if not(list_completed_projects is None):
+            self.__list_completed_projects = list_completed_projects
+        else:
+            self.__list_completed_projects = []
+
+        
 class Program:
 
     @staticmethod
