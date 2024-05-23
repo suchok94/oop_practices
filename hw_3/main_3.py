@@ -85,8 +85,29 @@ class Spell:
         self.__type = type
         self.__description = description
 
+    def get_name(self):
+        pass
 
+    def get_difficulty(self):
+        pass
 
+    def get_type(self):
+        pass
+
+    def get_description(self):
+        pass
+
+    def set_name(self):
+        pass
+
+    def set_difficulty(self):
+        pass
+
+    def set_type(self):
+        pass
+
+    def set_description(self):
+        pass
 
 
 
