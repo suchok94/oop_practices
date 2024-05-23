@@ -137,7 +137,50 @@ class Employee:
         else:
             self.__list_completed_projects = []
 
-        
+    def add_completed_project(self):
+        pass
+
+    def remove_completed_project(self):
+        pass
+
+    def increase_salary(self):
+        pass
+
+    def get_name(self):
+        pass
+
+    def get_position(self):
+        pass
+
+    def get_department(self):
+        pass
+
+    def get_salary(self):
+        pass
+
+    def get_length_of_service(self):
+        pass
+
+    def get_list_completed_projects(self):
+        pass
+
+    def set_name(self):
+        pass
+
+    def set_position(self):
+        pass
+
+    def set_department(self):
+        pass
+
+    def set_salary(self):
+        pass
+
+    def set_length_of_service(self):
+        pass
+
+    
+
 class Program:
 
     @staticmethod
