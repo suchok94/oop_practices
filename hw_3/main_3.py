@@ -3,12 +3,17 @@ from __future__ import annotations
 class Wizard:
 
 
-    def __init__(self, name: str, house: str, magic_level: int, list_spells: list[Spell], graduate: bool):
+    def __init__(self, name: str, house: str, magic_level: int, graduate: bool, list_spells: list[Spell] = None):
         self.__name = name
         self.__house = house
         self.__magic_level = magic_level
-        self.__list_spells = list_spells
         self.__graduate = graduate
+
+        if list_spells is None:
+            self.__list_spells = []
+        else:
+            self.__list_spells = list_spells
+
 
     def get_name(self):
         return self.__name
@@ -80,7 +85,7 @@ class Spell:
         self.__type = type
         self.__description = description
 
-    
+
 
 
 
