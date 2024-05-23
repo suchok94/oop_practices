@@ -71,11 +71,11 @@ class Wizard:
             raise Exception("amount <=0")
 
     def __str__(self):
-        return f'Имя волшебника: {self.__name}' \
-               f'Факултет: {self.__house}' \
-               f'Уровень магической силы: {self.__magic_level}' \
-               f'Список известных заклинаний: {self.__list_spells}' \
-               f'Статус выпуска: {self.__graduate}'
+        return f'Имя волшебника: {self.__name}\n' \
+               f'Факултет: {self.__house}\n' \
+               f'Уровень магической силы: {self.__magic_level}\n' \
+               f'Список известных заклинаний: {", ".join(str(i.get_name()) for i in self.__list_spells)} \n'\
+               f'Статус выпуска: {self.__graduate}\n'
 
 class Spell:
 
@@ -101,7 +101,7 @@ class Spell:
         self.__name = name
 
     def set_difficulty(self, difficulty: int):
-        if not isinstance(difficulty, int)
+        if not isinstance(difficulty, int):
             raise Exception("Difficulty isn't int")
 
         if difficulty > 0 and difficulty < 10:
@@ -117,17 +117,25 @@ class Spell:
         self.__description = description
 
     def __str__(self):
-        return f'Название {self.__name}' \
-               f'Уровень сложности: {self.__difficulty}' \
-               f'Тип: {self.__type} ' \
-               f'Описание: {self.__description}'
+        return f'Название {self.__name}\n' \
+               f'Уровень сложности: {self.__difficulty}\n' \
+               f'Тип: {self.__type}\n' \
+               f'Описание: {self.__description}\n'
 
 
 class Program:
 
     @staticmethod
     def main():
-        pass
+        wiz1 = Wizard('Vasya', 'Griff', 3, True)
+        spell1 = Spell('Abrakadabra', 1, 'Creating', 'Create new life')
+        spell2 = Spell('SimSalabim', 1, 'Destroy', 'Destroing object')
+        wiz1.add_spell(spell1)
+        wiz1.add_spell(spell2)
+        print(wiz1)
+        print(spell1)
+        wiz1.remove_spell(spell1)
+        print(wiz1)
 
 
 Program.main()
