@@ -121,4 +121,13 @@ class Spell:
                f'Уровень сложности: {self.__difficulty}' \
                f'Тип: {self.__type} ' \
                f'Описание: {self.__description}'
-    
+
+
+class Program:
+
+    @staticmethod
+    def main():
+        pass
+
+
+Program.main()
