@@ -125,7 +125,8 @@ from __future__ import annotations
 # task 2
 class Employee:
 
-    def __init__(self, name: str, position: str, department: str, salary: float, length_of_service: int, list_completed_projects: list[Project] = None):
+    def __init__(self, name: str, position: str, department: str, salary: float, length_of_service: int,
+                 list_completed_projects: list[Project] = None) -> object:
         self.__name = name
         self.__position = position
         self.__department = department
@@ -137,63 +138,103 @@ class Employee:
         else:
             self.__list_completed_projects = []
 
-    def add_completed_project(self):
-        pass
+    def add_completed_project(self, project):
+        if not (project in self.__list_completed_projects):
+            self.__list_completed_projects.append(project)
 
-    def remove_completed_project(self):
-        pass
+    def remove_completed_project(self, project):
+        if project in self.__list_completed_projects:
+            self.__list_completed_projects.remove(project)
 
-    def increase_salary(self):
-        pass
+    def increase_salary(self, addition):
+        if addition > 0:
+            self.__salary += addition
+        else:
+            raise Exception('Error value')
 
     def get_name(self):
-        pass
+        return self.__name
 
     def get_position(self):
-        pass
+        return self.__position
 
     def get_department(self):
-        pass
+       return self.__department
 
     def get_salary(self):
-        pass
+        return self.__salary
 
     def get_length_of_service(self):
-        pass
+        return self.__length_of_service
 
     def get_list_completed_projects(self):
-        pass
+        return self.__list_completed_projects
 
-    def set_name(self):
-        pass
+    def set_name(self, name: str):
+        self.__name = name
 
-    def set_position(self):
-        pass
+    def set_position(self, position: str):
+        self.__position = position
 
-    def set_department(self):
-        pass
+    def set_department(self, department: str):
+        self.__department = department
 
-    def set_salary(self):
-        pass
+    def set_salary(self, salary: float):
+        if not isinstance(salary, float):
+            raise Exception("Error type")
 
-    def set_length_of_service(self):
-        pass
+        if salary > 0:
+            self.__salary = salary
+        else:
+            raise Exception("Error value")
 
-    
+    def set_length_of_service(self, length_of_service: int):
+        if not(isinstance(length_of_service, int)):
+            raise Exception("Error type")
+
+        if length_of_service >= 0:
+            self.__length_of_service = length_of_service
+        else:
+            raise Exception("Error value")
+
+    def __str__(self):
+        return f'Имя сотрудника: {self.__name}\n' \
+               f'Должность: {self.__position}\n' \
+               f'Отдел: {self.__department}\n' \
+               f'Зарплата: {self.__salary}\n' \
+               f'Стаж работы: {self.__length_of_service}\n' \
+               f'Список выполненных проектов: {", ".join(str(name.get_name()) for name in self.__list_completed_projects)}\n'
+
+class Project:
+
+    def __init__(self, name):
+        self.__name = name
+
+    def get_name(self):
+        return self.__name
 
 class Program:
 
     @staticmethod
     def main():
-        wiz1 = Wizard('Vasya', 'Griff', 3, True)
-        spell1 = Spell('Abrakadabra', 1, 'Creating', 'Create new life')
-        spell2 = Spell('SimSalabim', 1, 'Destroy', 'Destroing object')
-        wiz1.add_spell(spell1)
-        wiz1.add_spell(spell2)
-        print(wiz1)
-        print(spell1)
-        wiz1.remove_spell(spell1)
-        print(wiz1)
+        # wiz1 = Wizard('Vasya', 'Griff', 3, True)
+        # spell1 = Spell('Abrakadabra', 1, 'Creating', 'Create new life')
+        # spell2 = Spell('SimSalabim', 1, 'Destroy', 'Destroing object')
+        # wiz1.add_spell(spell1)
+        # wiz1.add_spell(spell2)
+        # print(wiz1)
+        # print(spell1)
+        # wiz1.remove_spell(spell1)
+        # print(wiz1)
 
+        # task 2
+        emp1 = Employee("Ivan", "Jun", "IT", 123, 1)
+        project1 = Project('Yandex')
+        project2 = Project('Google')
+
+        emp1.add_completed_project(project1)
+        emp1.add_completed_project(project2)
+
+        print(emp1)
 
 Program.main()
