@@ -86,28 +86,39 @@ class Spell:
         self.__description = description
 
     def get_name(self):
-        pass
+        return self.__name
 
     def get_difficulty(self):
-        pass
+        return self.__difficulty
 
     def get_type(self):
-        pass
+        return self.__type
 
     def get_description(self):
-        pass
+        return self.__description
 
-    def set_name(self):
-        pass
+    def set_name(self, name: str):
+        self.__name = name
 
-    def set_difficulty(self):
-        pass
+    def set_difficulty(self, difficulty: int):
+        if not isinstance(difficulty, int)
+            raise Exception("Difficulty isn't int")
 
-    def set_type(self):
-        pass
+        if difficulty > 0 and difficulty < 10:
+            self.__difficulty = difficulty
+        else:
+            raise Exception("Error value")
 
-    def set_description(self):
-        pass
+    def set_type(self, type: str):
+        self.__type = type
 
 
+    def set_description(self, description: str):
+        self.__description = description
 
+    def __str__(self):
+        return f'Название {self.__name}' \
+               f'Уровень сложности: {self.__difficulty}' \
+               f'Тип: {self.__type} ' \
+               f'Описание: {self.__description}'
+    
