@@ -273,10 +273,16 @@ from __future__ import annotations
 # task 4
 class Athlete:
 
+    def __init__(self, name: str, age: int, type_of_sport: str, list_achivments: list[Achivment], active_status: bool):
+
+        pass
+
+
+class Achivment:
+
     def __init__(self):
         pass
 
-    
 class Program:
 
     @staticmethod
