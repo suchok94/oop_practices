@@ -273,15 +273,78 @@ from __future__ import annotations
 # task 4
 class Athlete:
 
-    def __init__(self, name: str, age: int, type_of_sport: str, list_achivments: list[Achivment], active_status: bool):
+    def __init__(self, name: str, age: int, type_of_sport: str, active_status: bool, list_achievments: list[Achivment] = None):
+        self.__name = name
+        self.__age = age
+        self.__type_of_sport = type_of_sport
+        self.__active_status = active_status
 
-        pass
+        if list_achievments is None:
+            self.__list_achievments = []
+        else:
+            self.__list_achievments = list_achievments
+
+    def add_new_achievment(self, achievment: Achivment):
+        if not(achievment in self.__list_achievments):
+            self.__list_achievments.append(achievment)
+        else:
+            raise Exception('Error value')
+
+    def remove_achievment(self, achievment: Achivment):
+        if achievment in self.__list_achievments:
+            self.__list_achievments.remove(achievment)
+        else:
+            raise Exception('Error value')
+
+    def get_name(self):
+        return self.__name
+
+    def get_age(self):
+        return self.__age
+
+    def get_type_of_sport(self):
+        return self.__type_of_sport
+
+    def get_list_achievements(self):
+        return self.__list_achievments
+
+    def get_active_status(self):
+        return self.__active_status
+
+    def set_name(self, name: str):
+        self.__name = name
+
+    def set_age(self, age: int):
+        if not isinstance(age, int):
+            raise Exception('Error type')
+
+        if age > 0 and age < 120:
+            self.__age = age
+        else:
+            raise Exception('Error value')
+
+    def set_type_of_sport(self, type_of_sport: str):
+        self.__type_of_sport = type_of_sport
+
+    def set_active_status(self, status: bool):
+        self.__active_status = status
+
+    def __str__(self):
+        return f'Имя спортсмена: {self.__name}\n' \
+               f'Возраст: {self.__age}\n' \
+               f'Вид спорта: {self.__type_of_sport}\n' \
+               f'Список достижений: {", ".join(str(text.get_name()) for text in self.__list_achievments)}\n' \
+               f'Текущий статус: {self.__active_status}'
+
 
 
 class Achivment:
 
-    def __init__(self):
-        pass
+    def __init__(self, name: str):
+        self.__name = name
+
+    def get_name(self):
+        return self.__name
 
 class Program:
 
@@ -316,4 +379,12 @@ class Program:
         # robot1.dont_working()
         # print(robot1)
 
+        # task 4
+        athlete1 = Athlete("Ivan", 35, "Golf", True)
+        print(athlete1)
+        acvievement1 = Achivment('Golf Cup')
+        acvievement2 = Achivment('Golf Cup № 2')
+        athlete1.add_new_achievment(acvievement1)
+        athlete1.add_new_achievment(acvievement2)
+        print(athlete1)
 Program.main()
