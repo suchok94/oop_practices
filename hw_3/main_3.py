@@ -227,7 +227,13 @@ class Robot:
         self.__current_task = task
 
     def change_battery_charge_level(self, battery_charge_level: int):
-        self.__battery_charge_level = battery_charge_level
+        if not isinstance(battery_charge_level, int):
+            raise Exception('Error type')
+
+        if battery_charge_level >= 0 and battery_charge_level <= 100:
+            self.__battery_charge_level = battery_charge_level
+        else:
+            raise Exception('Error value')
 
     def working(self):
         self.__status_work = True
