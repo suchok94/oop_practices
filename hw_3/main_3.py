@@ -213,63 +213,70 @@ from __future__ import annotations
 #     def get_name(self):
 #         return self.__name
 
-# task 3
-class Robot:
+# # task 3
+# class Robot:
+#
+#     def __init__(self, serial_number: str, model: str, current_task: str, battery_charge_level: int, status_work: bool):
+#         self.__serial_number = serial_number
+#         self.__model = model
+#         self.__current_task = current_task
+#         self.__battery_charge_level = battery_charge_level
+#         self.__status_work = status_work
+#
+#     def new_task(self, task: str):
+#         self.__current_task = task
+#
+#     def change_battery_charge_level(self, battery_charge_level: int):
+#         if not isinstance(battery_charge_level, int):
+#             raise Exception('Error type')
+#
+#         if battery_charge_level >= 0 and battery_charge_level <= 100:
+#             self.__battery_charge_level = battery_charge_level
+#         else:
+#             raise Exception('Error value')
+#
+#     def working(self):
+#         self.__status_work = True
+#
+#     def dont_working(self):
+#         self.__status_work = False
+#
+#     def get_serial_number(self):
+#         return self.__serial_number
+#
+#     def get_model(self):
+#         return self.__model
+#
+#     def get_current_task(self):
+#         return self.__current_task
+#
+#     def get_battery_charge_level(self):
+#         return self.__battery_charge_level
+#
+#     def get_status_work(self):
+#         return self.__status_work
+#
+#     def set_serial_number(self, serial_number: str):
+#         self.__serial_number = serial_number
+#
+#     def set_model(self, model: str):
+#         self.__model = model
+#
+#     def __str__(self):
+#         return f'Робот:' \
+#                f'Серийный номер: {self.__serial_number}\n' \
+#                f'Модель: {self.__model}\n' \
+#                f'Текущая задача: {self.__current_task}\n' \
+#                f'Уровень заряда батареи: {self.__battery_charge_level}\n' \
+#                f'Статус работы: {self.__status_work}\n'
 
-    def __init__(self, serial_number: str, model: str, current_task: str, battery_charge_level: int, status_work: bool):
-        self.__serial_number = serial_number
-        self.__model = model
-        self.__current_task = current_task
-        self.__battery_charge_level = battery_charge_level
-        self.__status_work = status_work
+# task 4
+class Athlete:
 
-    def new_task(self, task: str):
-        self.__current_task = task
+    def __init__(self):
+        pass
 
-    def change_battery_charge_level(self, battery_charge_level: int):
-        if not isinstance(battery_charge_level, int):
-            raise Exception('Error type')
-
-        if battery_charge_level >= 0 and battery_charge_level <= 100:
-            self.__battery_charge_level = battery_charge_level
-        else:
-            raise Exception('Error value')
-
-    def working(self):
-        self.__status_work = True
-
-    def dont_working(self):
-        self.__status_work = False
-
-    def get_serial_number(self):
-        return self.__serial_number
-
-    def get_model(self):
-        return self.__model
-
-    def get_current_task(self):
-        return self.__current_task
-
-    def get_battery_charge_level(self):
-        return self.__battery_charge_level
-
-    def get_status_work(self):
-        return self.__status_work
-
-    def set_serial_number(self, serial_number: str):
-        self.__serial_number = serial_number
-
-    def set_model(self, model: str):
-        self.__model = model
-
-    def __str__(self):
-        return f'Робот:' \
-               f'Серийный номер: {self.__serial_number}\n' \
-               f'Модель: {self.__model}\n' \
-               f'Текущая задача: {self.__current_task}\n' \
-               f'Уровень заряда батареи: {self.__battery_charge_level}\n' \
-               f'Статус работы: {self.__status_work}\n'
-
+    
 class Program:
 
     @staticmethod
@@ -295,12 +302,12 @@ class Program:
         #
         # print(emp1)
 
-        # task 3
-        robot1 = Robot('1c22da123', 'T1000', 'Kill John Konner', 100, True)
-        print(robot1)
-        robot1.new_task('Грузить картошку')
-        robot1.change_battery_charge_level(0)
-        robot1.dont_working()
-        print(robot1)
+        # # task 3
+        # robot1 = Robot('1c22da123', 'T1000', 'Kill John Konner', 100, True)
+        # print(robot1)
+        # robot1.new_task('Грузить картошку')
+        # robot1.change_battery_charge_level(0)
+        # robot1.dont_working()
+        # print(robot1)
 
 Program.main()
