@@ -53,4 +53,41 @@ class Student:
                f'Возраст: {self.__age}\n' \
                f'Средний балл: {self.__avg_score}\n'
 
+    def __eq__(self, other): # ==
+        if self.__avg_score == other.__avg_score:
+            return True
+        else:
+            return False
+
+    def __ne__(self, other): # !=
+        if self.__avg_score != other.__avg_score:
+            return True
+        else:
+            return False
+
+    def __lt__(self, other): # <
+        if self.__avg_score < other.__avg_score:
+            return True
+        else:
+            return False
+
+    def __gt__(self, other): # >
+        if self.__avg_score > other.__avg_score:
+            return True
+        else:
+            return False
+
+    def __le__(self, other): # <=
+        if self.__avg_score <= other.__avg_score:
+            return True
+        else:
+            return False
+
+    def __ge__(self, other): # >=
+        if self.__avg_score >= other.__avg_score:
+            return True
+        else:
+            return False
+
+
     
