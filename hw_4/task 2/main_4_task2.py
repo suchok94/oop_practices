@@ -129,34 +129,45 @@ class Book:
 
 class Employee:
 
-    def __init__(self):
-        pass
+    def __init__(self, name: str, post: str, id: int, contact_info: list[ContactInfo] = None):
+        self.__name = name
+        self.__post = post
+        self.__id = id
+
+        if not (contact_info is None):
+            self.__contact_info = contact_info
+        else:
+            self.__contact_info = []
 
     def get_name(self):
-        pass
+        return self.__name
 
     def get_position(self):
-        pass
+        return self.__post
 
     def get_id(self):
-        pass
+        return self.__id
 
     def get_contact_info(self):
-        pass
+        return self.__contact_info
 
-    def set_position(self):
-        pass
+    def set_position(self, position):
+        self.__post = position
 
-    def add_contact_info(self):
-        pass
+    def add_contact_info(self, type, value):
+        contact_info = ContactInfo(type, value)
+        self.__contact_info.append(contact_info)
 
     def remove_contact_info(self):
-        pass
+        self.__contact_info.clear()
 
     def __str__(self):
-        pass
+        return f'Name: {self.__name}\n' \
+               f'Position: {self.__post}\n' \
+               f'id: {self.__id}\n' \
+               f'Contact Info: {self.__contact_info}\n'
 
-    
+
 
 class Genre:
     pass
