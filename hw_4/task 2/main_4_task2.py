@@ -63,8 +63,8 @@ class Library:
     def __str__(self):
         return f'Имя: {self.__name}\n' \
                f'Адрес: {self.__address}\n' \
-               f'Список книг: {self.__books_list}\n' \
-               f'Список работников: {self.__employees_list}\n'
+               f'Список книг: {", ".join(str(text.get_title()) for text in  self.__books_list)}\n' \
+               f'Список работников: {", ".join(str(text.get_name()) for text in  self.__employees_list)}\n'
 
 
 class Book:
@@ -213,3 +213,22 @@ class ContactInfo:
         return f'Type: {self.__type}\n' \
                f'Value: {self.__value}\n'
 
+class Program:
+
+    @staticmethod
+    def main():
+        libr1 = Library('Biblioteka', 'ulica Pushkina')
+        book1 = Book('Abc', 'Petr1', 2000, 1)
+        genre1 = Genre('Scary', "booooo")
+        book1.add_genre(genre1)
+        libr1.add_book(book1)
+        employee1 = Employee('Ivan', 'Director', 1)
+        employee1.add_contact_info('email', 'sobaka@mail.ru')
+
+        libr1.add_employee(employee1)
+
+
+        print(libr1)
+
+
+Program.main()
