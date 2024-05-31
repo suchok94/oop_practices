@@ -128,7 +128,35 @@ class Book:
                f'Genres: {self.__genres}\n'
 
 class Employee:
-    pass
+
+    def __init__(self):
+        pass
+
+    def get_name(self):
+        pass
+
+    def get_position(self):
+        pass
+
+    def get_id(self):
+        pass
+
+    def get_contact_info(self):
+        pass
+
+    def set_position(self):
+        pass
+
+    def add_contact_info(self):
+        pass
+
+    def remove_contact_info(self):
+        pass
+
+    def __str__(self):
+        pass
+
+    
 
 class Genre:
     pass
