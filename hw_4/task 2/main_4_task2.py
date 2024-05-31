@@ -224,10 +224,9 @@ class Program:
         libr1.add_book(book1)
         employee1 = Employee('Ivan', 'Director', 1)
         employee1.add_contact_info('email', 'sobaka@mail.ru')
-
         libr1.add_employee(employee1)
-
-
+        print(libr1)
+        libr1.remove_employee(employee1)
         print(libr1)
 
 
