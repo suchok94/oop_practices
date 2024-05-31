@@ -171,42 +171,45 @@ class Employee:
 
 class Genre:
 
-    def __init__(self):
-        pass
+    def __init__(self, name: str, description: str):
+        self.__name = name
+        self.__description = description
 
     def get_name(self):
-        pass
+        return self.__name
 
-    def get_description():
-        pass
+    def get_description(self):
+        return self.__description
 
-    def set_name(self):
-        pass
+    def set_name(self, name: str):
+        self.__name = name
 
-    def set_description(self):
-        pass
+    def set_description(self, description):
+        self.__description = description
 
     def __str__(self):
-        pass
+        return f'Name: {self.__name}\n' \
+               f'Description: {self.__description}\n'
 
 class ContactInfo:
 
-    def __init__(self):
-        pass
+    def __init__(self, type: str, value: str):
+        self.__type = type
+        self.__value = value
 
     def get_type(self):
-        pass
+        return self.__type
 
     def get_description(self):
-        pass
+        return self.__value
 
-    def set_type(self):
-        pass
+    def set_type(self, type):
+        self.__type = type
 
-    def set_value(self):
-        pass
+    def set_value(self, value):
+        self.__value = value
 
     def __str__(self):
-        pass
-
+        return f'Type: {self.__type}\n' \
+               f'Value: {self.__value}\n'
 
