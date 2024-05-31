@@ -170,8 +170,43 @@ class Employee:
 
 
 class Genre:
-    pass
+
+    def __init__(self):
+        pass
+
+    def get_name(self):
+        pass
+
+    def get_description():
+        pass
+
+    def set_name(self):
+        pass
+
+    def set_description(self):
+        pass
+
+    def __str__(self):
+        pass
 
 class ContactInfo:
-    pass
+
+    def __init__(self):
+        pass
+
+    def get_type(self):
+        pass
+
+    def get_description(self):
+        pass
+
+    def set_type(self):
+        pass
+
+    def set_value(self):
+        pass
+
+    def __str__(self):
+        pass
+
 
