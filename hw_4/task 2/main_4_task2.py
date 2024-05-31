@@ -65,10 +65,74 @@ class Library:
                f'Адрес: {self.__address}\n' \
                f'Список книг: {self.__books_list}\n' \
                f'Список работников: {self.__employees_list}\n'
-       
+
 
 class Book:
-    pass
+
+    def __init__(self, title: str, author: str, year: int, id: int, genres: list[Genre] = None):
+        self.__title = title
+        self.__author = author
+        self.__year = year
+        self.__id = id
+
+        if not(genres is None):
+            self.__genres = genres
+        else:
+            self.__genres = []
+
+    def get_title(self):
+        return self.__title
+
+    def get_year(self):
+        return self.__year
+
+    def get_id(self):
+        return self.__id
+
+    def get_genres(self):
+        return self.__genres
+
+    def set_year(self, year):
+        if not isinstance(year, int):
+            raise Exception('Error type')
+
+        if year > 0 and year < 2024:
+            self.__year = year
+        else:
+            raise Exception("Error value")
+
+
+    def add_genre(self, genre):
+        if not isinstance(genre, Genre):
+            raise Exception("Error type")
+
+        if not (genre in self.__genres):
+            self.__genres.append(genre)
+        else:
+            raise Exception("Error value")
+
+    def remove_genre(self, genre):
+        if not isinstance(genre, Genre):
+            raise Exception("Error type")
+
+        if genre in self.__genres:
+            self.__genres.remove(genre)
+        else:
+            raise Exception("Error value")
+
+    def __str__(self):
+        return f'Tittle: {self.__title}\n' \
+               f'Author: {self.__author}\n' \
+               f'Year: {self.__year}\n' \
+               f'id: {self.__id}\n' \
+               f'Genres: {self.__genres}\n'
 
 class Employee:
     pass
+
+class Genre:
+    pass
+
+class ContactInfo:
+    pass
+
