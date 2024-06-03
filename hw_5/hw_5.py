@@ -45,9 +45,12 @@ class Person:
         self._age = age
 
     def introduce_yourself(self):
-        pass
+        print(f'Name: {self._name}\n'
+              f'Age: {self._age}\n')
 
-    
+        
+
+
 
 class Program:
 
