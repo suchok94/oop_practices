@@ -34,51 +34,89 @@
 
 
 
-# task 2
-class Person:
+# # task 2
+# class Person:
+#
+#     _name: str
+#     _age: int
+#
+#     def __init__(self, name: str, age: int):
+#         self._name = name
+#         self._age = age
+#
+#     def introduce_yourself(self):
+#         print(f'Name: {self._name}\n'
+#               f'Age: {self._age}')
+#
+#
+# class Doctor(Person):
+#
+#     def __init__(self, name: str, age: int, specialization: str):
+#         Person.__init__(self, name, age)
+#         self.__specialization = specialization
+#
+#     def introduce_yourself(self):
+#         Person.introduce_yourself(self)
+#         print(f'Specialization: {self.__specialization}')
+#
+# class Engineer(Person):
+#
+#     def __init__(self, name: str, age: int, grade: int):
+#         Person.__init__(self, name, age)
+#         self.__grade = grade
+#
+#     def introduce_yourself(self):
+#         Person.introduce_yourself(self)
+#         print(f'Grade: {self.__grade}')
+#
+# class Artist(Person):
+#
+#     def __init__(self, name: str, age: int, genre: str):
+#         Person.__init__(self, name, age)
+#         self.__genre = genre
+#
+#     def introduce_yourself(self):
+#         Person.introduce_yourself(self)
+#         print(f'Grade: {self.__genre}')
 
-    _name: str
-    _age: int
+# task 3
+class Transport_Means:
 
-    def __init__(self, name: str, age: int):
-        self._name = name
-        self._age = age
+    def __init__(self, ):
+        pass
 
-    def introduce_yourself(self):
-        print(f'Name: {self._name}\n'
-              f'Age: {self._age}')
+class Train(Transport_Means):
+    pass
+
+class Express(Train):
+    pass
+
+class Car(Transport_Means):
+    pass
 
 
-class Doctor(Person):
+# task 4
 
-    def __init__(self, name: str, age: int, specialization: str):
-        Person.__init__(self, name, age)
-        self.__specialization = specialization
+class Animal:
+    pass
 
-    def introduce_yourself(self):
-        Person.introduce_yourself(self)
-        print(f'Specialization: {self.__specialization}')
+class Fish(Animal):
+    pass
 
-class Engineer(Person):
+class Mammals(Animal):
+    pass
 
-    def __init__(self, name: str, age: int, grade: int):
-        Person.__init__(self, name, age)
-        self.__grade = grade
+class Cat(Mammals):
+    pass
 
-    def introduce_yourself(self):
-        Person.introduce_yourself(self)
-        print(f'Grade: {self.__grade}')
+class Dog(Mammals):
+    pass
 
-class Artist(Person):
+class Shark(Fish):
+    pass
 
-    def __init__(self, name: str, age: int, genre: str):
-        Person.__init__(self, name, age)
-        self.__genre = genre
-
-    def introduce_yourself(self):
-        Person.introduce_yourself(self)
-        print(f'Grade: {self.__genre}')
-
+class Karp(Fish):
+    pass
 
 
 class Program:
@@ -94,12 +132,13 @@ class Program:
         # print(cat1.make_sound())
         # print(bird1.make_sound())
 
-        doctor1 = Doctor('Aibolit', 60, 'Vet')
-        engineer1 = Engineer('Mihalich', 55, 6)
-        artist1 = Artist('Jim Kerry', 50, 'Comedy')
-        doctor1.introduce_yourself()
-        engineer1.introduce_yourself()
-        artist1.introduce_yourself()
+        # # task2
+        # doctor1 = Doctor('Aibolit', 60, 'Vet')
+        # engineer1 = Engineer('Mihalich', 55, 6)
+        # artist1 = Artist('Jim Kerry', 50, 'Comedy')
+        # doctor1.introduce_yourself()
+        # engineer1.introduce_yourself()
+        # artist1.introduce_yourself()
 
 
 
