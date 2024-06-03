@@ -46,9 +46,38 @@ class Person:
 
     def introduce_yourself(self):
         print(f'Name: {self._name}\n'
-              f'Age: {self._age}\n')
+              f'Age: {self._age}')
 
-        
+
+class Doctor(Person):
+
+    def __init__(self, name: str, age: int, specialization: str):
+        Person.__init__(self, name, age)
+        self.__specialization = specialization
+
+    def introduce_yourself(self):
+        Person.introduce_yourself(self)
+        print(f'Specialization: {self.__specialization}')
+
+class Engineer(Person):
+
+    def __init__(self, name: str, age: int, grade: int):
+        Person.__init__(self, name, age)
+        self.__grade = grade
+
+    def introduce_yourself(self):
+        Person.introduce_yourself(self)
+        print(f'Grade: {self.__grade}')
+
+class Artist(Person):
+
+    def __init__(self, name: str, age: int, genre: str):
+        Person.__init__(self, name, age)
+        self.__genre = genre
+
+    def introduce_yourself(self):
+        Person.introduce_yourself(self)
+        print(f'Grade: {self.__genre}')
 
 
 
@@ -64,6 +93,14 @@ class Program:
         # print(dog1.make_sound())
         # print(cat1.make_sound())
         # print(bird1.make_sound())
+
+        doctor1 = Doctor('Aibolit', 60, 'Vet')
+        engineer1 = Engineer('Mihalich', 55, 6)
+        artist1 = Artist('Jim Kerry', 50, 'Comedy')
+        doctor1.introduce_yourself()
+        engineer1.introduce_yourself()
+        artist1.introduce_yourself()
+
 
 
 Program.main()
