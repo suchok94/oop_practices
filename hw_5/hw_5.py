@@ -81,8 +81,6 @@
 
 # task 3
 class Transport_Means:
-
-    def __init__(self, ):
         pass
 
 class Train(Transport_Means):
