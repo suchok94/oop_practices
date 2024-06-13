@@ -156,7 +156,7 @@ class Program:
         print(dealership1)
         print(customer1)
         print(customer2)
-        
+
 
 
 Program.main()
